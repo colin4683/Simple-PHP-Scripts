@@ -46,5 +46,10 @@ if (isset($_GET['new'])) {
 	$sql = "INSERT INTO clients(hash, hostname, ipaddress, open) VALUES ('$hash', '$hostname', '$ipaddress', '1')";
 	$query = mysqli_query($con, $sql);
 
+	$sql = "SELECT clientid FROM clients WHERE hash = '$hash'";
+	$query = mysqli_query($con, $sql);
+	$rows = mysqli_fetch_array($query);
+	echo $rows['clientid'];
+
 }
 ?>
