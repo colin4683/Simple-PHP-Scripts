@@ -7,9 +7,7 @@ $con = mysqli_connect($hostname, $username, $pass, 'pastterman_phpdata');
 
 
 
-
-
-if (isset($_GET['clientid']) && isset($_GET['Sndmsg'])) {
+if (isset($_GET['clientid']) && isset($_GET['Sendmsg'])) {
 	$clientid = $_GET['clientid'];
 	$clientid = strip_tags($clientid);
 	$clientid = stripslashes($clientid);
@@ -22,8 +20,8 @@ if (isset($_GET['clientid']) && isset($_GET['Sndmsg'])) {
 	echo $result['msg'];
 	$sql = "UPDATE clients SET command = '0' WHERE clientid = '$clientid'";
 	$query = mysqli_query($con, $sql);
-	$sql = "DELETE FROM messages WHERE clientid = '$clientid'";
-	$query = mysqli_query($con, $sql);
+	//$sql = "DELETE FROM messages WHERE clientid = '$clientid'";
+	//$query = mysqli_query($con, $sql);
 	die();
 }
 

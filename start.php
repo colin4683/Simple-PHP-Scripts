@@ -19,7 +19,7 @@ if (isset($_GET['check'])) {
 		$clientid = $rowArray['clientid'];
 		echo $clientid;
 		$sql = "UPDATE clients SET open=1 WHERE clientid='$clientid'";
-		$query = myqli_query($con, $sql);
+		$query = mysqli_query($con, $sql);
 	} else {
 		echo "false";
 	}
