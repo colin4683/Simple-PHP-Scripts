@@ -34,7 +34,7 @@ if (isset($_GET['clientid'])) {
 	$clientid = stripslashes($clientid);
 	$clientid = mysqli_real_escape_string($con, $clientid);
 
-	$sql = "SELECT command FROM clients LIMIT 1";
+	$sql = "SELECT command FROM clients WHERE clientid= '$clientid'";
 	$query= mysqli_query($con, $sql);
 	$result = mysqli_fetch_array($query);
 	echo $result['command'];
