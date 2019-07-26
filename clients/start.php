@@ -1,9 +1,9 @@
 <?php 
 
 $hostname = "localhost";
-$username = "pastterman";
-$pass = "JS9iHX4TdF";
-$con = mysqli_connect($hostname, $username, $pass, 'pastterman_phpdata');
+$username = "";
+$pass = "";
+$con = mysqli_connect($hostname, $username, $pass, '');
 if (isset($_GET['check'])) {
 	$hash = $_GET['hash'];
 	$hash = stripslashes($hash);
